@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@fullcalendar/core": "^6.1.14",
+    "@fullcalendar/daygrid": "^6.1.14",
+    "@fullcalendar/list": "^6.1.14",
+    "@fullcalendar/timegrid": "^6.1.14",
+    "fullcalendar": "^6.1.14"
+  }
+}

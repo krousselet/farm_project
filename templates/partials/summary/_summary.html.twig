@@ -1,0 +1,58 @@
+<main class="container-fluid">
+    <div class="container-fluid">
+        <h1 class="text-center">Votre résumé</h1>
+    </div>
+    {% if animals is not empty %}
+        <div class="container">
+            <div class="container-fluid">
+                <h2 class="text-center">Liste des Animaux</h2>
+            </div>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Espèce</th>
+                    <th>Naissance</th>
+                    <th>Maturité</th>
+                    <th>{{ count }} individus</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for animal in animals %}
+                    <tr>
+                        <td>{{ animal.name }}</td>
+                        <td>{{ animal.espece.name }}</td>
+                        <td>{{ animal.createdAt|date('Y-m-d H:i') }}</td>
+                        <td>{{ animal.sixMonthsDate|date('d-m-Y H:i') }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <p class="text-center">Aucun individu trouvé pour la sélection</p>
+    {% endif %}
+
+    <div class="container">
+        <div class="container-fluid">
+            <h2 class="text-center">Statistiques par Espèce</h2>
+        </div>
+        <p class="text-center">Total Animaux: {{ count }}</p>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Espèce</th>
+                <th>Nombre</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for species, count in speciesCount %}
+                <tr>
+                    <td>{{ species }}</td>
+                    <td>{{ count }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</main>

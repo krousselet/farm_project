@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes animaux{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <h1 class="text-center">Mes animaux</h1>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Création</th>
+                <th>Description</th>
+                <th>Espèce</th>
+                <th>Maturité</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for animal in animals %}
+            <tr>
+                <td>{{ animal.name }}</td>
+                <td>{{ animal.createdAt ? animal.createdAt|date('d-m-Y H:i:s') : '' }}</td>
+                <td>{{ animal.description }}</td>
+                <td>{{ animal.espece }}</td>
+                <td>{{ animal.sixMonthsDate ? animal.sixMonthsDate|date('d-m-Y H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_animal_crud_edit', {'id': animal.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">Aucune ocurrence trouvée</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

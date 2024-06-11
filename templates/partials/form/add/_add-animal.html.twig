@@ -1,0 +1,11 @@
+{{ form_errors(addAnimalForm) }}
+
+    {{ form_start(addAnimalForm) }}
+        {{ form_row(addAnimalForm.name) }}
+        {{ form_row(addAnimalForm.description) }}
+        {{ form_row(addAnimalForm.createdAt) }}
+        {{ form_row(addAnimalForm.espece.name) }}
+
+
+<button type="submit" class="btn">Creer</button>
+{{ form_end(addAnimalForm) }}

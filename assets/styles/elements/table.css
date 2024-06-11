@@ -1,0 +1,23 @@
+table {
+    margin: 0 auto; /* Horizontally center the table */
+    border-collapse: collapse; /* Make sure borders don't have extra space */
+    width: 80%; /* Optional: Adjust width as needed */
+}
+
+/* Center table headers and content */
+th, td {
+    text-align: center; /* Center text horizontally */
+    padding: 8px; /* Add padding for better readability */
+    border: 1px solid #ddd; /* Add border to table cells */
+}
+
+/* Optional: Add some styling to the table headers */
+th {
+    background-color: #f2f2f2; /* Light gray background for headers */
+    font-weight: bold; /* Bold text for headers */
+}
+
+/* Optional: Add some padding and border to the table */
+table {
+    border: 1px solid #ddd; /* Border around the table */
+}

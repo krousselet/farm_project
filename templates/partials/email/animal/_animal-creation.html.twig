@@ -1,0 +1,10 @@
+<h1>Bonjour !</h1>
+<p>Nous vous informons que vous venez de créer avec succès un nouvel animal !</p>
+<p>Pour rappel, il s'agit de :</p>
+<ul>
+    <li>{{ animal.name }}</li>
+    <li>Ajouté le {{ animal.createdAt|date('d-m-Y') }}</li>
+    <li>{{ species }}</li>
+</ul>
+<p>Vous recevrez de nouveau un email lorsque celui-ci aura atteint ses six mois, en date du {{ interval|date('d-m-Y') }}</p>
+<p>Bonne journée !</p>

@@ -1,3 +1,37 @@
-body {
-    background-color: skyblue;
+
+
+/* Center the table within its container */
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+/* Center table headers and content */
+th, td {
+    text-align: center;
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+/* Optional: Add some styling to the table headers */
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+table {
+    border: 1px solid #ddd;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
 }

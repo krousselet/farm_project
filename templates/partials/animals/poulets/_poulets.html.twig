@@ -1,0 +1,31 @@
+<main>
+    <div id="title-container">
+        <h1>Poulets</h1>
+    </div>
+    {% if animals is not empty %}
+        <table>
+            <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Espece</th>
+                <th>Naissance</th>
+                <th>Maturité</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for animal in animals %}
+                <tr>
+                    <td>{{ animal.name }}</td>
+                    <td>{{ animal.description }}</td>
+                    <td>{{ animal.espece.name }}</td>
+                    <td>{{ animal.createdAt|date('Y-m-d H:i') }}</td>
+                    <td>{{ animal.sixMonthsDate|date('d-m-Y H:i') }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Aucun individu trouvé pour la sélection</p>
+    {% endif %}
+</main>
