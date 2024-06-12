@@ -1,55 +1,55 @@
 <main class="container-fluid">
-    <div class="container-fluid">
+    <div class="container-fluid appear">
         <h1 class="text-center">Votre résumé</h1>
     </div>
     {% if animals is not empty %}
-        <div class="container">
+        <div class="container appear-one">
             <div class="container-fluid">
                 <h2 class="text-center">Liste des Animaux</h2>
             </div>
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th>Nom</th>
-                    <th>Espèce</th>
-                    <th>Naissance</th>
-                    <th>Maturité</th>
-                    <th>{{ count }} individus</th>
+                    <th class="appear-one">Nom</th>
+                    <th class="appear-two">Espèce</th>
+                    <th class="appear-three">Naissance</th>
+                    <th class="appear-four">Maturité</th>
+                    <th class="appear-five">{{ count }} individus</th>
                 </tr>
                 </thead>
                 <tbody>
                 {% for animal in animals %}
                     <tr>
-                        <td>{{ animal.name }}</td>
-                        <td>{{ animal.espece.name }}</td>
-                        <td>{{ animal.createdAt|date('Y-m-d H:i') }}</td>
-                        <td>{{ animal.sixMonthsDate|date('d-m-Y H:i') }}</td>
+                        <td class="appear-one">{{ animal.name }}</td>
+                        <td class="appear-two">{{ animal.espece.name }}</td>
+                        <td class="appear-three">{{ animal.createdAt|date('Y-m-d H:i') }}</td>
+                        <td class="appear-four">{{ animal.sixMonthsDate|date('d-m-Y H:i') }}</td>
                     </tr>
                 {% endfor %}
                 </tbody>
             </table>
         </div>
     {% else %}
-        <p class="text-center">Aucun individu trouvé pour la sélection</p>
+        {{ include('partials/errors/_no-animal-found.html.twig') }}
     {% endif %}
 
     <div class="container">
         <div class="container-fluid">
-            <h2 class="text-center">Statistiques par Espèce</h2>
+            <h2 class="text-center appear">Statistiques par Espèce</h2>
         </div>
         <p class="text-center">Total Animaux: {{ count }}</p>
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>Espèce</th>
-                <th>Nombre</th>
+                <th class="appear-one">Espèce</th>
+                <th class="appear-two">Nombre</th>
             </tr>
             </thead>
             <tbody>
             {% for species, count in speciesCount %}
                 <tr>
-                    <td>{{ species }}</td>
-                    <td>{{ count }}</td>
+                    <td class="appear-three">{{ species }}</td>
+                    <td class="appear-four">{{ count }}</td>
                 </tr>
             {% endfor %}
             </tbody>

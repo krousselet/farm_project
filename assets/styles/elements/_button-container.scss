@@ -1,0 +1,11 @@
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+}
+
+.button-container-inactive {
+  display: none;
+}

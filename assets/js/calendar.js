@@ -21,6 +21,31 @@ document.addEventListener('DOMContentLoaded', function() {
                 alert('Une erreur est survenue pendant le chargement des données...');
             }
         },
+        eventContent: function(arg) {
+            // Manually format the date in French
+            const formatDateToFrench = (dateStr) => {
+                const date = new Date(dateStr);
+                const options = {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                };
+                return date.toLocaleDateString('fr-FR', options);
+            };
+
+            const matureDate = formatDateToFrench(arg.event.extendedProps.mature);
+
+            return {
+                html: `
+                    <div>
+                        <b>${arg.event.title}</b><br/>
+                        <i>Mature: ${matureDate}</i>
+                    </div>
+                `
+            };
+        }
 
 
     })

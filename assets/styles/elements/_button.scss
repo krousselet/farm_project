@@ -1,0 +1,14 @@
+button {
+  transition: .2s ease;
+  &:hover {
+    @media (min-width: 991px) {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.23);
+      transition: .2s ease;
+    }
+  }&:active {
+    @media (min-width: 991px) {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.55);
+      transition: .2s ease;
+    }
+  }
+}

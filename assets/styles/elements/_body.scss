@@ -1,0 +1,16 @@
+* {
+  font-family: "EB Garamond", serif;
+  @media (min-width: 550px) and (max-width: 991px) {
+    font-size: 24px;
+  }
+  @media (min-width: 991px) and (max-width: 1499px) {
+    font-size: 32px;
+  }
+  @media (min-width: 1499px) and (max-width: 3080px) {
+    font-size: 38px;
+  }
+}
+body {
+  background: white;
+  height: 100vh;
+}

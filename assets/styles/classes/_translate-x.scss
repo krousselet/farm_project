@@ -1,0 +1,5 @@
+.translate-x {
+  overflow-x: hidden;
+  transform: translateX(-100px);
+  animation: transform-x .3s ease-in-out .2s forwards;
+}

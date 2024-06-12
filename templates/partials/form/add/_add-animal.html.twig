@@ -1,11 +1,27 @@
-{{ form_errors(addAnimalForm) }}
+<main>
+    {{ form_errors(addAnimalForm) }}
+    <div class="container-fluid appear">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-xxl-6 appear-one">
+                {{ form_start(addAnimalForm, {
+                    'attr': {'class': 'appear-two'}
+                }) }}
+                {{ form_row(addAnimalForm.name, {
+                    'attr': {'class': 'appear-three'}
+                }) }}
+                {{ form_row(addAnimalForm.description, {
+                    'attr': {'class': 'appear-four'}
+                }) }}
+                {{ form_row(addAnimalForm.createdAt, {
+                    'attr': {'class': 'appear-five'}
+                }) }}
+                {{ form_row(addAnimalForm.espece.name, {
+                    'attr': {'class': 'appear-six'}
+                }) }}
 
-    {{ form_start(addAnimalForm) }}
-        {{ form_row(addAnimalForm.name) }}
-        {{ form_row(addAnimalForm.description) }}
-        {{ form_row(addAnimalForm.createdAt) }}
-        {{ form_row(addAnimalForm.espece.name) }}
-
-
-<button type="submit" class="btn">Creer</button>
-{{ form_end(addAnimalForm) }}
+                <button type="submit" class="btn appear-seven">Créer</button>
+                {{ form_end(addAnimalForm) }}
+            </div>
+        </div>
+    </div>
+</main>

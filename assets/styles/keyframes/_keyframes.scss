@@ -1,0 +1,25 @@
+@keyframes appear {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes disappear {
+  0% {
+    display: inline-block;
+    opacity: 1;
+  }
+  100% {
+    display: none !important;
+    opacity: 0;
+  }
+}
+
+@keyframes transform-x {
+  90% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

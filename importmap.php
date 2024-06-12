@@ -24,6 +24,10 @@ return [
         'path' => './assets/js/calendar.js',
         'entrypoint' => true,
     ],
+    'rooster' => [
+        'path' => './assets/js/rooster.js',
+        'entrypoint' => true,
+    ],
     '@hotwired/stimulus' => [
         'version' => '3.2.2',
     ],

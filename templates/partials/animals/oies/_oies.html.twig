@@ -6,19 +6,21 @@
         <table>
             <thead>
             <tr>
-                <th>Nom</th>
-                <th>Description</th>
-                <th>Espece</th>
-                <th>Naissance</th>
+                <th class="appear">Nom</th>
+                <th class="appear-one">Description</th>
+                <th class="appear-two">Espece</th>
+                <th class="appear-three">Naissance</th>
+                <th class="appear-four">Maturité</th>
             </tr>
             </thead>
             <tbody>
             {% for animal in animals %}
                 <tr>
-                    <td>{{ animal.name }}</td>
-                    <td>{{ animal.description }}</td>
-                    <td>{{ animal.espece.name }}</td>
-                    <td>{{ animal.createdAt|date('Y-m-d H:i') }}</td>
+                    <td class="appear">{{ animal.name }}</td>
+                    <td class="appear-one">{{ animal.description }}</td>
+                    <td class="appear-two">{{ animal.espece.name }}</td>
+                    <td class="appear-three">{{ animal.createdAt|date('d-m-Y H:i') }}</td>
+                    <td class="appear-four">{{ animal.sixMonthsDate|date('d-m-Y H:i') }}</td>
                 </tr>
             {% endfor %}
             </tbody>

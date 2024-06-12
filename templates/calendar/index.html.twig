@@ -2,7 +2,9 @@
 
 {% block title %}Hello CalendarController!{% endblock %}
 {% block javascripts %}
-    {% block importmap %}{{ importmap('calendar') }}{% endblock %}
+    {% block importmap %}
+        {{ importmap('calendar') }}
+    {% endblock %}
 {% endblock %}
 {% block body %}
 {{ include('partials/calendar/_calendar.html.twig') }}

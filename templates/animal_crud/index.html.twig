@@ -9,30 +9,28 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Nom</th>
-                <th>Création</th>
-                <th>Description</th>
-                <th>Espèce</th>
-                <th>Maturité</th>
-                <th>actions</th>
+                <th class="appear-one">Nom</th>
+                <th class="appear-two">Création</th>
+                <th class="appear-three">Description</th>
+                <th class="appear-four">Espèce</th>
+                <th class="appear-five">Maturité</th>
+                <th class="appear-six">actions</th>
             </tr>
         </thead>
         <tbody>
         {% for animal in animals %}
             <tr>
-                <td>{{ animal.name }}</td>
-                <td>{{ animal.createdAt ? animal.createdAt|date('d-m-Y H:i:s') : '' }}</td>
-                <td>{{ animal.description }}</td>
-                <td>{{ animal.espece }}</td>
-                <td>{{ animal.sixMonthsDate ? animal.sixMonthsDate|date('d-m-Y H:i:s') : '' }}</td>
-                <td>
+                <td class="appear-one">{{ animal.name }}</td>
+                <td class="appear-two">{{ animal.createdAt ? animal.createdAt|date('d-m-Y H:i:s') : '' }}</td>
+                <td class="appear-three">{{ animal.description }}</td>
+                <td class="appear-four">{{ animal.espece }}</td>
+                <td class="appear-five">{{ animal.sixMonthsDate ? animal.sixMonthsDate|date('d-m-Y H:i:s') : '' }}</td>
+                <td class="appear-six">
                     <a href="{{ path('app_animal_crud_edit', {'id': animal.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
-            <tr>
-                <td colspan="6">Aucune ocurrence trouvée</td>
-            </tr>
+            {{ include('partials/errors/_no-animal-found.html.twig') }}
         {% endfor %}
         </tbody>
     </table>

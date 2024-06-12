@@ -28,10 +28,13 @@ class CalendarController extends AbstractController
             $events[] = [
                 'title' => $animal->getEspece()->getName() . ' ' . $animal->getName(),
                 'start' => $animal->getCreatedAt()->format('Y-m-d H:i:s'),
-                'end' => $animal->getSixMonthsDate()->format('Y-m-d H:i:s'),
+                'extendedProps' => [
+                    'mature' => $animal->getSixMonthsDate()->format('Y-m-d H:i:s'),
+                ]
             ];
         }
 
         return new JsonResponse($events);
     }
 }
+//                'extendedProps' => $animal->getSixMonthsDate()->format('Y-m-d H:i:s'),
