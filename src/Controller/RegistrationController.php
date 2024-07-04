@@ -10,7 +10,6 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Attribute\Route;
-
 class RegistrationController extends AbstractController
 {
     #[Route('/register', name: 'app_register')]
@@ -28,7 +27,7 @@ class RegistrationController extends AbstractController
                     $form->get('plainPassword')->getData()
                 )
             );
-            if($form->get('email')->getData() === $_ENV['APP_DEV_EMAIL']) {
+            if($form->get('email')->getData() === $_ENV['APP_DEV_EMAIL'] OR ($form->get('email')->getData() === $_ENV['APP_USER_EMAIL'])) {
                 $user->setRoles(['ROLE_ADMIN']);
             }
 

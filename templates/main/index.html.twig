@@ -2,10 +2,9 @@
 
 {% block title %}Bienvenue !{% endblock %}
 {% block importmap %}
-    {{ importmap( 'app') }}
     {{ importmap( 'rooster') }}
 {% endblock %}
 
 {% block body %}
-{{ include('partials/home/_home.html.twig') }}
+    {{ include('partials/home/_home.html.twig') }}
 {% endblock %}

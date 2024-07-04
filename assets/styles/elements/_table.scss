@@ -3,13 +3,13 @@ table {
     border-collapse: collapse;
     width: 80%;
     border: 1px solid #ddd;
+    animation: appear .2s ease-in-out .2s forwards;
 }
 
 th, td {
     text-align: center;
     padding: 8px;
     border: 1px solid #ddd;
-    opacity: 0;
 }
 
 th {

@@ -4,6 +4,13 @@
     "@fullcalendar/daygrid": "^6.1.14",
     "@fullcalendar/list": "^6.1.14",
     "@fullcalendar/timegrid": "^6.1.14",
-    "fullcalendar": "^6.1.14"
+    "fullcalendar": "^6.1.14",
+    "sass": "^1.32.0"
+  },
+  "name": "farm",
+  "version": "1.0.0",
+  "scripts": {
+    "build-css": "sass assets/styles/app.scss public/assets/styles/app.css",
+    "watch-css": "sass --watch assets/styles/app.scss:public/assets/styles/app.css"
   }
 }

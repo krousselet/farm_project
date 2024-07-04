@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const calendarEl = document.getElementById('calendar')
+    const calendarEl = document.getElementById('calendar');
     const calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
         headerToolbar: {
@@ -9,20 +9,23 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         locale: 'fr',
         buttonText: {
-            today:    'Aujourd\'hui',
-            month:    'Mois',
-            week:     'Semaine',
-            day:      'Jour',
-            list:     'Liste'
+            today: 'Aujourd\'hui',
+            month: 'Mois',
+            week: 'Semaine',
+            day: 'Jour',
+            list: 'Liste'
         },
         events: {
             url: '/api/animal-events',
+            success: function(data) {
+                console.log('Events data:', data); // Log the events data
+                return data;
+            },
             failure: function() {
                 alert('Une erreur est survenue pendant le chargement des données...');
             }
         },
         eventContent: function(arg) {
-            // Manually format the date in French
             const formatDateToFrench = (dateStr) => {
                 const date = new Date(dateStr);
                 const options = {
@@ -45,9 +48,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 `
             };
+        },
+        eventDidMount: function(info) {
+            console.log('Event rendered:', info.event);
         }
-
-
-    })
-    calendar.render()
-})
+    });
+    calendar.render();
+});
